@@ -1,0 +1,29 @@
+import { Route, Routes } from "react-router-dom"
+import Hero from "./Pages/Hero"
+import Navbar from "./Pages/Navbar"
+import Storepage from "./Pages/Storepage"
+import Register from "./components/auth/Register"
+import Login from "./components/auth/Login" 
+import User from "./Pages/User"
+import Footer from "./components/footer/Footer"
+
+function App() {
+
+  return (
+    <>
+      <Navbar />
+      <Routes>
+				<Route path="/" element={<Hero />} />
+				<Route path="/store" element={<Storepage />} />
+        <Route path="/store/:category" element={<Storepage />} />
+        <Route path="/register" element={<Register />} />
+				<Route path="/login" element={<Login />} />
+        <Route path="/user" element={<User />} />
+      </Routes>
+      <Footer />
+      
+    </>
+  )
+}
+
+export default App
